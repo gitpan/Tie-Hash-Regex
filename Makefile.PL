@@ -4,5 +4,6 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'	=> 'Tie::Hash::Regex',
     'VERSION_FROM' => 'Regex.pm', # finds $VERSION
-    'PREREQ_PM'		=> { Attribute::Handlers => 0 },
+    'PREREQ_PM'		=> { Attribute::Handlers => 0.76,
+                             Test::Simple => 0 },
 );
