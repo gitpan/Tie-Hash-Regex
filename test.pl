@@ -1,7 +1,7 @@
 # Before `make install' is performed this script should be runnable with
 # `make test'. After `make install' it should work as `perl test.pl'
 
-use Test::Simple tests=> 8;
+use Test::Simple tests=> 9;
 
 END {print "not ok 1\n" unless $loaded;}
 use Tie::Hash::Regex;
@@ -31,6 +31,8 @@ my @vals = tied(%hash)->FETCH(k);
 ok(@vals == 2);
 delete $hash{f};
 ok(keys %hash == 2);
+
+ok(exists $hash{key});
 
 delete $hash{y};
 ok(not keys %hash);

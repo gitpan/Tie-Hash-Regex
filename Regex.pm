@@ -12,9 +12,12 @@
 #   This script is free software; you can redistribute it and/or
 #   modify it under the same terms as Perl itself.
 #
-# $Id: Regex.pm,v 0.7 2002/07/12 18:37:09 dave Exp dave $
+# $Id: Regex.pm,v 0.8 2002/07/28 20:31:28 dave Exp dave $
 #
 # $Log: Regex.pm,v $
+# Revision 0.8  2002/07/28 20:31:28  dave
+# Applied "exists" hash from Steffen Müller.
+#
 # Revision 0.7  2002/07/12 18:37:09  dave
 # Corrected Attribute::Handler dependencies
 #
@@ -48,7 +51,7 @@ use Attribute::Handlers autotie => { __CALLER__::Regex => __PACKAGE__ };
 @EXPORT = qw();
 @EXPORT_OK =();
 
-$VERSION = sprintf "%d.%02d", '$Revision: 0.7 $ ' =~ /(\d+)\.(\d+)/;
+$VERSION = sprintf "%d.%02d", '$Revision: 0.8 $ ' =~ /(\d+)\.(\d+)/;
 
 sub FETCH {
   my $self = shift;
@@ -83,7 +86,7 @@ sub EXISTS {
 
   $key = qr/$key/ unless $is_re;
 
-  /$key/ && return 1 for keys %$key;
+  /$key/ && return 1 for keys %$self;
 
   return;
 }
