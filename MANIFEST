@@ -6,3 +6,4 @@ t/test.t
 t/pod.t
 README
 COPYING
+META.yml                                 Module meta-data (added by MakeMaker)
