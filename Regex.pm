@@ -12,9 +12,15 @@
 #   This script is free software; you can redistribute it and/or
 #   modify it under the same terms as Perl itself.
 #
-# $Id: Regex.pm,v 0.4 2001/09/03 19:54:35 dave Exp dave $
+# $Id: Regex.pm,v 0.6 2001/12/09 19:08:31 dave Exp dave $
 #
 # $Log: Regex.pm,v $
+# Revision 0.6  2001/12/09 19:08:31  dave
+# Doc fixes.
+#
+# Revision 0.5  2001/12/09 19:06:36  dave
+# Added Attribute::Handlers interface.
+#
 # Revision 0.4  2001/09/03 19:54:35  dave
 # Minor fixes.
 #
@@ -33,12 +39,13 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
 require Exporter;
 require Tie::Hash;
+use Attribute::Handlers autotie => { __CALLER__::Regex => __PACKAGE__ };
 
 @ISA = qw(Exporter Tie::StdHash);
 @EXPORT = qw();
 @EXPORT_OK =();
 
-$VERSION = sprintf "%d.%02d", '$Revision: 0.4 $ ' =~ /(\d+)\.(\d+)/;
+$VERSION = sprintf "%d.%02d", '$Revision: 0.6 $ ' =~ /(\d+)\.(\d+)/;
 
 sub FETCH {
   my $self = shift;
@@ -111,7 +118,7 @@ Tie::Hash::Regex - Match hash keys using Regular Expressions
 
   $h{key}   = 'value';
   $h{key2}  = 'another value';
-  $h{stuff} = 'something else'
+  $h{stuff} = 'something else';
 
   print $h{key};  # prints 'value'
   print $h{2};    # prints 'another value'
@@ -119,7 +126,11 @@ Tie::Hash::Regex - Match hash keys using Regular Expressions
 
   print tied(%h)->FETCH(k); # prints 'value' and 'another value'
 
-  delete $h{k};   # deletes $h{key} and $h{key2}
+  delete $h{k};   # deletes $h{key} and $h{key2};
+
+or (new! improved!)
+
+  my $h : Regex;
 
 =head1 DESCRIPTION
 
@@ -149,6 +160,10 @@ using the slightly less readable:
 
   my @vals = tied(%h)->FETCH($pat);
 
+=head2 ATTRIBUTE INTERFACE
+
+From version 0.06, you can use attributes to define your hash as being tied
+to Tie::Hash::Regex. You'll need to install the module Attribute::Handlers.
 
 =head1 AUTHOR
 
