@@ -1,3 +1,28 @@
+#
+# DESCRIPTION
+#  Tie::Hash::Regex is a Perl object that implements a hash which allows
+#  regex matching on key lookups.
+#
+# AUTHOR
+#   Dave Cross   <dave@mag-sol.com>
+#
+# COPYRIGHT
+#   Copyright (C) 2001, Magnum Solutions Ltd.  All Rights Reserved.
+#
+#   This script is free software; you can redistribute it and/or
+#   modify it under the same terms as Perl itself.
+#
+# $Id: Regex.pm,v 0.3 2001/09/02 18:09:09 dave Exp dave $
+#
+# $Log: Regex.pm,v $
+# Revision 0.3  2001/09/02 18:09:09  dave
+# Added ref to Tie::RegexpHash.
+#
+# Revision 0.2  2001/06/03 17:57:26  dave
+# Put into RCS.
+#
+#
+
 package Tie::Hash::Regex;
 
 use strict;
@@ -10,7 +35,7 @@ require Tie::Hash;
 @EXPORT = qw();
 @EXPORT_OK =();
 
-$VERSION = '0.01';
+$VERSION = sprintf "%d.%02d", '$Revision: 0.3 $ ' =~ /(\d+)\.(\d+)/;
 
 sub FETCH {
   my $self = shift;
@@ -135,5 +160,7 @@ and to Jeff "japhy" Pinyan for some useful code suggestions.
 perl(1).
 
 perltie(1).
+
+Tie::RegexpHash(1)
 
 =cut

@@ -1,6 +1,6 @@
 WHAT IS Tie::Hash::Regex?
 
-tie::Hash::Regex is a Perl module which extends the functionality of Perl
+Tie::Hash::Regex is a Perl module which extends the functionality of Perl
 hashes so that they can match regular expression keys.
 
 

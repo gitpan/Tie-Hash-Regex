@@ -4,3 +4,4 @@ Makefile.PL
 Regex.pm
 test.pl
 README
+COPYING
