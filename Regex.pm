@@ -12,9 +12,12 @@
 #   This script is free software; you can redistribute it and/or
 #   modify it under the same terms as Perl itself.
 #
-# $Id: Regex.pm,v 0.3 2001/09/02 18:09:09 dave Exp dave $
+# $Id: Regex.pm,v 0.4 2001/09/03 19:54:35 dave Exp dave $
 #
 # $Log: Regex.pm,v $
+# Revision 0.4  2001/09/03 19:54:35  dave
+# Minor fixes.
+#
 # Revision 0.3  2001/09/02 18:09:09  dave
 # Added ref to Tie::RegexpHash.
 #
@@ -35,7 +38,7 @@ require Tie::Hash;
 @EXPORT = qw();
 @EXPORT_OK =();
 
-$VERSION = sprintf "%d.%02d", '$Revision: 0.3 $ ' =~ /(\d+)\.(\d+)/;
+$VERSION = sprintf "%d.%02d", '$Revision: 0.4 $ ' =~ /(\d+)\.(\d+)/;
 
 sub FETCH {
   my $self = shift;
@@ -90,7 +93,6 @@ sub DELETE {
       delete $self->{$_};
     }
   }
-#  /$key/ and delete $self->{$_} for keys %$self;
 }
 
 1;
