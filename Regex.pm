@@ -12,9 +12,12 @@
 #   This script is free software; you can redistribute it and/or
 #   modify it under the same terms as Perl itself.
 #
-# $Id: Regex.pm,v 0.8 2002/07/28 20:31:28 dave Exp dave $
+# $Id: Regex.pm,v 0.9 2002/09/23 19:03:49 dave Exp dave $
 #
 # $Log: Regex.pm,v $
+# Revision 0.9  2002/09/23 19:03:49  dave
+# Fixed to work with Perl 5.8.0.
+#
 # Revision 0.8  2002/07/28 20:31:28  dave
 # Applied "exists" hash from Steffen Müller.
 #
@@ -45,13 +48,13 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
 require Exporter;
 require Tie::Hash;
-use Attribute::Handlers autotie => { __CALLER__::Regex => __PACKAGE__ };
+use Attribute::Handlers autotie => { "__CALLER__::Regex" => __PACKAGE__ };
 
 @ISA = qw(Exporter Tie::StdHash);
 @EXPORT = qw();
 @EXPORT_OK =();
 
-$VERSION = sprintf "%d.%02d", '$Revision: 0.8 $ ' =~ /(\d+)\.(\d+)/;
+$VERSION = sprintf "%d.%02d", '$Revision: 0.9 $ ' =~ /(\d+)\.(\d+)/;
 
 sub FETCH {
   my $self = shift;
