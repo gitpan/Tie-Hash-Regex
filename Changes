@@ -1,3 +1,8 @@
+2006-06-01 19:50  dave
+
+	* Regex.pm (1.0): Raising to version 1.0
+	* MANIFEST (1.2), t/pod_coverage.t (1.1): Added t/pod_coverage.t
+
 2004-10-23 17:19  dave
 
 	* Regex.pm (0.10), t/test.t (1.3): Improve test coverage.

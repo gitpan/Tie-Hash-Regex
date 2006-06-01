@@ -1,4 +1,4 @@
-# $Id: Regex.pm,v 0.10 2004/10/23 16:19:15 dave Exp $
+# $Id: Regex.pm,v 1.0 2006/06/01 18:50:38 dave Exp $
 
 =head1 NAME
 
@@ -75,7 +75,7 @@ use Attribute::Handlers autotie => { "__CALLER__::Regex" => __PACKAGE__ };
 @EXPORT = qw();
 @EXPORT_OK =();
 
-$VERSION = sprintf "%d.%02d", '$Revision: 0.10 $ ' =~ /(\d+)\.(\d+)/;
+$VERSION = sprintf "%d.%02d", '$Revision: 1.0 $ ' =~ /(\d+)\.(\d+)/;
 
 =head1 METHODS
 
@@ -185,6 +185,9 @@ Tie::RegexpHash(1)
 
 #
 # $Log: Regex.pm,v $
+# Revision 1.0  2006/06/01 18:50:38  dave
+# Raising to version 1.0
+#
 # Revision 0.10  2004/10/23 16:19:15  dave
 # Improve test coverage.
 #
