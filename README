@@ -1,4 +1,5 @@
 
+Tie::Hash::Regex
 ----------------
 
 NAME
@@ -32,11 +33,14 @@ HOW DO I INSTALL IT?
   somewhere in your Perl library path (@INC) and copying the Regex.pm file 
   into this directory should also do the trick.
 
-WHERE IS THE DODUMENTATION?
+WHERE IS THE DOCUMENTATION?
 
   All of the documentation is currently in POD format in the Regex.pm file.
   If you install the module using the standard method you should be able to
    read it by typing
+
+       perldoc Tie::Hash::Regex
+
 
   at a comand prompt.
 

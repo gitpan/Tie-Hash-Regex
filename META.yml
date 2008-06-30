@@ -1,6 +1,6 @@
 ---
 name: Tie-Hash-Regex
-version: 1.01
+version: 1.02
 author:
   - 'Dave Cross <dave@mag-sol.com>'
 abstract: Match hash keys using Regular Expressions
@@ -17,7 +17,7 @@ provides:
   Tie::Hash::Regex:
     file: lib/Tie/Hash/Regex.pm
     version: 15
-generated_by: Module::Build version 0.2808
+generated_by: Module::Build version 0.280801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2
